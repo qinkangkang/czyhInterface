@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd"
+	updateCheck="false" name="czyhInterfaceCache">
+
+	<diskStore path="java.io.tmpdir/czyhInterface/ehcache" />
+
+	<!-- 配置自定义缓存 -->
+	<!-- maxEntriesLocalHeap:堆内存中缓存最大对象数，0没有限制 -->
+	<!-- maxEntriesLocalDisk:磁盘中存储的最大对象数，默认为0不限制 -->
+	<!-- eternal：缓存中对象是否为永久的，如果是，超时设置将被忽略，对象从不过期。 -->
+	<!-- timeToIdleSeconds：缓存数据的钝化时间，也就是在一个元素消亡之前，两次访问时间的最大时间间隔值， 这只能在元素不是永久驻留时有效，如果该值是 0 就意味着元素可以停顿无穷长的时间。 -->
+	<!-- timeToLiveSeconds：缓存数据的生存时间，也就是一个元素从构建到消亡的最大时间间隔值， 这只能在元素不是永久驻留时有效，如果该值是0就意味着元素可以停顿无穷长的时间。 -->
+	<!-- overflowToDisk：内存不足时，是否启用磁盘缓存。 -->
+	<!-- memoryStoreEvictionPolicy：缓存满了之后的淘汰算法。 -->
+
+	<!-- DefaultCache setting. -->
+	<defaultCache maxEntriesLocalHeap="10000" eternal="false" timeToIdleSeconds="86400" timeToLiveSeconds="86400"
+		overflowToDisk="false" maxEntriesLocalDisk="100000" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="PassKey" maxEntriesLocalHeap="10000" eternal="false" timeToIdleSeconds="86400" timeToLiveSeconds="86400"
+		overflowToDisk="true" maxEntriesLocalDisk="100000" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="TicketToId" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="100000" eternal="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="86400" overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="SmsCheckCode" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="100000" eternal="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="180" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<cache name="SmsLoginPwd" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="100000" eternal="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="180" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<cache name="VerificationOrder" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="100000" eternal="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="180" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<cache name="OnOffSale" maxEntriesLocalHeap="1000" eternal="false" timeToIdleSeconds="0" timeToLiveSeconds="3600"
+		overflowToDisk="false" memoryStoreEvictionPolicy="FIFO" />
+
+	<cache name="EventStock" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="0" eternal="true" timeToIdleSeconds="0"
+		timeToLiveSeconds="0" overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="EventCategory" maxEntriesLocalHeap="100" maxEntriesLocalDisk="0" eternal="true" timeToIdleSeconds="0"
+		timeToLiveSeconds="0" overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="SessionIdEventDistance" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="100000" eternal="false"
+		timeToIdleSeconds="7200" timeToLiveSeconds="0" overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="EventRecommend" maxEntriesLocalHeap="1000" maxEntriesLocalDisk="10000" eternal="true"
+		overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="ArticleRecommend" maxEntriesLocalHeap="1000" maxEntriesLocalDisk="10000" eternal="true"
+		overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="CommentRecommend" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="100000" eternal="true"
+		overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="EventQuota" maxEntriesLocalHeap="100" eternal="true" overflowToDisk="false"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="CustomerQuota" maxEntriesLocalHeap="1000" eternal="false" overflowToDisk="false" timeToIdleSeconds="0"
+		timeToLiveSeconds="86400" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="Customer" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="100000" eternal="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="86400" overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="QnUserUploadToken" maxEntriesLocalHeap="5" eternal="false" overflowToDisk="false" timeToIdleSeconds="0"
+		timeToLiveSeconds="86000" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="QnUserUploadTokenLogo" maxEntriesLocalHeap="5" eternal="false" overflowToDisk="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="86000" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="Configuration" maxEntriesLocalHeap="100" eternal="true" overflowToDisk="false"
+		memoryStoreEvictionPolicy="LRU" />
+
+</ehcache>
